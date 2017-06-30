@@ -20,6 +20,38 @@
 }
 
 .formato{
+    font-family: monospace;
+    font-size: 20px;
     text-align: center;
-    color: tomato;
+    color: white;
+    margin-right: 15%;
+    margin-left: 15%;
+}
+
+.img{
+    height: 700px;
+    width: 700px;
+}
+
+.formato2{
+    text-align: left;
+    color: white;
+    font-family: monospace;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.formato_imgs{
+    width: 250px;
+    height: 250px;
+}
+
+.imgdesenvolv{
+    float: right;
+    width: 250px;
+    height: 250px;
+}
+
+.txtdesen{
+    float: right;
 }

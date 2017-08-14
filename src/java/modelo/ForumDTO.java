@@ -8,7 +8,7 @@
  *
  * @author informatica
  */
-public class forumDTO {
+public class ForumDTO {
     private String mensag;
 
     public String getMensag() {

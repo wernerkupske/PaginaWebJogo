@@ -48,11 +48,39 @@ and open the template in the editor.
                 </nav>
             </div>
 
+            <%
+            
+            // criar um DAO
+            
+            // carregar a lista de mensagens do forum
+            
+            
+            
+            %>
+            
             <main class="mdl-layout__content">
                 <img src="assets/coollogo_forum.png" class="displayed"/>
                 <div class="container">
                     <div class="chat">
                         <div id="chatZone" name="chatZone">
+                           
+                            <!--
+                            <div class="chatmsg"><b>Werner</b>: oi<br/></div>
+                            <div class="chatmsg"><b>Gabriel</b>: olá<br/></div>
+                            -->
+                            
+                            <% 
+                            
+                            // percorrer as mensagens do forum
+                            
+                              // exibe a mensagem
+                            
+                              %>
+                              <div class="chatmsg"><b><%=msg.getNome()%></b>: <%=msg.getMensagem%><br/></div>
+                              <%
+                            
+                            %>
+                            
                         </div>
                         <form onsubmit="chat.sendMsg(); return true;">
                             <label for="msg" style="float:left">Message:

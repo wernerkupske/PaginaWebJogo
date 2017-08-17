@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import dao.sql.ForumDAO;
+import modelo.ForumDTO;
 
 
 /*
@@ -33,7 +33,7 @@ public class ForumDAO {
         if (rs.next()) {
             forumDTO = new ForumDTO();
             forumDTO.setNome(rs.getString(1));
-            forumDTO.setTexto(rs.getString(2));
+            forumDTO.setMensag(rs.getString(2));
         }
         conn.close();
     }

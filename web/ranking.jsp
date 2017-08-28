@@ -1,11 +1,14 @@
+<%-- 
+    Document   : ranking
+    Created on : 28/08/2017, 14:56:32
+    Author     : informatica
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Pizza Sabor Zumbi</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,9 +17,7 @@ and open the template in the editor.
         <link rel="stylesheet" href="estilos.css">
         <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     </head>
-    <body style="background-image: url('https://images.bigcartel.com/theme_images/13421662/pizza-dude-3.gif'); 
-          background-size: 40%; 
-          background-color: black; background-repeat: no-repeat; background-position: center -130%">
+    <body style="background-color: black; ">
         <style>
             .demo-layout-transparent {
                 background: url('../assets/demos/transparent.jpg') center / cover;
@@ -26,7 +27,7 @@ and open the template in the editor.
                 color: yellow;
             }
         </style>
-        
+
         <div class="demo-layout-transparent mdl-layout mdl-js-layout">
             <header class="mdl-layout__header mdl-layout__header--transparent">
                 <div class="mdl-layout__header-row">
@@ -46,16 +47,26 @@ and open the template in the editor.
                     <a class="mdl-navigation__link" href="forum.jsp">Forum</a>
                 </nav>
             </div>
-            
+
             <main class="mdl-layout__content">
-                <img src="assets/coollogo3.png" class="displayed"/>
-                <div class="img_formato_3">
-                    <img src="assets/coollogo_Vindo.png"/>
-                </div>
-                <div class="img_formato_4" style="text-align: left ">
-                    <img src="assets/coollogo_Bem.png"/>                    
-                </div>
-                
+                <img src="assets/coollogo_ranking.png" class="displayed"/>
+
+                <table align="center" width="500" class="mdl-data-table mdl-js-data-table">
+                    <thead>
+                        <tr align="center">
+                            <th  class="mdl-data-table__cell--non-numeric">Jogador</th>
+                            <th>-</th>
+                            <th  >Pontuação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%
+                            
+                        %>
+                    </tbody>
+
+                </table>
+
             </main>
         </div>
     </body>

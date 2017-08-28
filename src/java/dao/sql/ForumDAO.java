@@ -41,7 +41,6 @@ public class ForumDAO {
     public ForumDTO carregaDados() throws SQLException {
         Connection conn = DriverManager.getConnection(STRING_CONEXAO);
         String sql = "select * from forum";
-        
         return null;
     }
 }

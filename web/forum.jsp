@@ -8,18 +8,17 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <title>Pizza Sabor Zumbi</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+        <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css"/>
         <link rel="stylesheet" href="estilos.css">
-        <link rel="stylesheet" href="newcss.css">
-        <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+            <link rel="stylesheet" href="newcss.css"/>
+            <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     </head>
-     <body style=" background-color: black;">
-
+    <body style=" background-color: black;">
         <div class="demo-layout-transparent mdl-layout mdl-js-layout">
             <header class="mdl-layout__header mdl-layout__header--transparent">
                 <div class="mdl-layout__header-row">
@@ -32,20 +31,37 @@
                 <nav class="mdl-navigation">
                     <a class="mdl-navigation__link" href="index.html">Página Inicial</a>
                     <a class="mdl-navigation__link" href="sobreJogo.html">Sobre o jogo</a>
-                    <a class="mdl-navigation__link" href="ranking.html">Ranking</a>
+                    <a class="mdl-navigation__link" href="ranking.jsp">Ranking</a>
                     <a class="mdl-navigation__link" href="download.html">Download</a>
                     <a class="mdl-navigation__link" href="fotos.html">Fotos</a>
                     <a class="mdl-navigation__link" href="desenvolvedores.html">Desenvolvedores</a>
-                    <a class="mdl-navigation__link" href="Fórum.html">Forum</a>
+                    <a class="mdl-navigation__link" href="forum.jsp">Forum</a>
                 </nav>
             </div>         
-            
             <main class="mdl-layout__content">
                 <img src="assets/coollogo_forum.png" class="displayed"/>
-               
-                <script type="text/javascript" src="chat.js">
-                </script>
+                <html xmlns="http://www.w3.org/1999/xhtml">
+                    <div id="wrapper">
+                        <div id="menu">
+                            <!-- Quando logar e tiver tudo válido mostrar o link sair para deslogar 
+                                <p class="logout" style=" text-align: right; float: right"> <a id="exit" href="#">Sair</a></p>
+                            -->
+                            <div style="clear:both">
+                            </div>
+                        </div>
+                        <!--
+                             Mostrar no chatbox: NomeUsuario(data): mensagem  
+                        -->
+                        <div id="chatbox">
+                        </div>
+                        <form name="message" method="post">
+                            <p style="text-align: left;margin-left: 27px">Nome: <input name="usernome" type="nome" id="username" size="63" /></p>                                 
+                            <p style="text-align: left;margin-left: 27px">Mensagem: <input name="usermsg" type="text" id="usermsg" size="63" /></p>
+                            <input  style=" margin-top: 25px;margin-left: 28px" name="submitmsg" type="submit"  id="submitmsg" value="Postar" />
+                        </form>
+                    </div>
+                </html>
             </main>
-        </div>
+        </div>  
     </body>
 </html>

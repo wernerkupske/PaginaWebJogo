@@ -22,7 +22,7 @@ public class ForumDAO {
     private static final String STRING_CONEXAO = "jdbc:mysql://localhost/forum?"
             + "user=root&password=alunoifc";
 
-    public void insereDados(String nome, String txt) throws SQLException {
+    public void insereDados(String nome, String txt) throws SQLException, Exception {
         Connection conn = DriverManager.getConnection(STRING_CONEXAO);
         String sql = "insert into forum values (?,?)";
         PreparedStatement p = conn.prepareStatement(sql);

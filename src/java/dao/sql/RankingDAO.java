@@ -20,7 +20,7 @@ public class RankingDAO {
      private static final String STRING_CONEXAO = "jdbc:mysql://localhost/forum?"
             + "user=root&password=alunoifc";
      
-      public ArrayList<RankingDTO> montaListaProdutos() throws SQLException {
+      public ArrayList<RankingDTO> montaListaProdutos() throws SQLException, Exception {
         ArrayList<RankingDTO> listaRetorno = new ArrayList();
         // estabelecer a conexão...mysql-connector-java-5.1.42-bin.jar
         Connection conn = DriverManager.getConnection(STRING_CONEXAO);

@@ -4,6 +4,9 @@
     Author     : informatica
 --%>
 
+<%@page import="modelo.RankingDAO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="modelo.RankingDTO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -51,22 +54,37 @@
             <main class="mdl-layout__content">
                 <img src="assets/coollogo_ranking.png" class="displayed"/>
 
-                <table align="center" width="500" class="mdl-data-table mdl-js-data-table">
-                    <thead>
-                        <tr align="center">
-                            <th  class="mdl-data-table__cell--non-numeric">Jogador</th>
-                            <th>-</th>
-                            <th  >Pontuação</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+                <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
+                    <%
+                        RankingDAO pdao = new RankingDAO();
+                        ArrayList<RankingDTO> list = pdao.carregaPontucao();
+                        if (list.isEmpty()) {
+                    %>
+                    <h2>Não há nenhuma pontuação.</h4>    
                         <%
-                            
-                        %>
-                    </tbody>
-
-                </table>
-
+                        } else {
+                            for (RankingDTO p : list) {
+                        %>                         
+                        <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="margin-left: 870px;
+                               margin-top: 10px;">
+                            <thead>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>Pontuacao</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><%=p.getNome()%></td>
+                                    <td><%=p.getPontuacao()%></td>
+                                </tr>
+                                <%
+                                        }
+                                    }
+                                %>
+                            </tbody>
+                        </table>
+                </div>    
             </main>
         </div>
     </body>

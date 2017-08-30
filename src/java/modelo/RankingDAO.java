@@ -1,4 +1,4 @@
-package dao.sql;
+package modelo;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -6,8 +6,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import modelo.ForumDTO;
-
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -18,46 +16,50 @@ import modelo.ForumDTO;
  *
  * @author informatica
  */
-public class ForumDAO {
+public class RankingDAO {
 
     private static final String STRING_CONEXAO = "jdbc:mysql://localhost/forum?"
-            + "user=root&password=root";
+	+ "user=root&password=root";
 
-    public void insereDados(String nome, String txt, String horario){
-        try{
+    public ArrayList carregaPontucao() {
+	ArrayList<RankingDTO> listaRetorno = new ArrayList();
+	try {
 	    DriverManager.registerDriver(new com.mysql.jdbc.Driver());
 	    Connection conn = DriverManager.getConnection(STRING_CONEXAO);
-	    String sql = "insert into forum(nome, msg, strData) values (?,?,?)";
+	    String sql = "select * from pontuacao";
+	    // enviar o select para ser analisado pelo banco
+	    // de dados...
 	    PreparedStatement p = conn.prepareStatement(sql);
 	    // definir o valor de cada um dos parâmetros...
-	    p.setString(1, nome);
-	    p.setString(2, txt);
-	    p.setString(3, horario);
-	    p.execute();
-	    conn.close();
-	}catch(SQLException e){
-	    System.out.println("Erro ao inserir dados no banco.");
-	    e.printStackTrace();
-	}
-	
-    }
-
-    public ArrayList<ForumDTO> carregaDados() throws SQLException {
-	ArrayList<ForumDTO> ret = new ArrayList();
-	try{
-	    DriverManager.registerDriver(new com.mysql.jdbc.Driver());
-	    Connection conn = DriverManager.getConnection(STRING_CONEXAO);
-	    String sql = "select * from forum";
-	    PreparedStatement p = conn.prepareStatement(sql);
 	    ResultSet rs = p.executeQuery();
 	    while (rs.next()) {
-		ForumDTO dto = new ForumDTO(rs.getString("nome"), rs.getString("msg"), rs.getString("strData"));
-		ret.add(dto);
+		RankingDTO rankingDTO = new RankingDTO(rs.getString("nome"), rs.getInt("score"));
+		listaRetorno.add(rankingDTO);
 	    }
-	}catch(SQLException e){
-	    System.out.println("Erro ao carregar mensagens do banco.");
+	    conn.close();
+	} catch (SQLException e) {
+	    System.out.println("Erro ao carregar pontuação.");
 	    e.printStackTrace();
 	}
-        return ret;
+	return listaRetorno;
     }
+    
+    public void inserePontuacao(String nome, int scr){
+	try {
+	    DriverManager.registerDriver(new com.mysql.jdbc.Driver());
+	    Connection conn = DriverManager.getConnection(STRING_CONEXAO);
+	    String sql = "insert into pontuacao(nome, score) values(?, ?)";
+	    // enviar o select para ser analisado pelo banco
+	    // de dados...
+	    PreparedStatement p = conn.prepareStatement(sql);
+	    p.setString(1, nome);
+	    p.setInt(2, scr);
+	    p.execute();
+	    conn.close();
+	} catch (SQLException e) {
+	    System.out.println("Erro ao inserir pontuação.");
+	    e.printStackTrace();
+	}
+    }
+
 }

@@ -11,7 +11,25 @@ package modelo;
  */
 public class ForumDTO {
 
-    private String mensag, nome;
+    public ForumDTO(){
+	
+    }
+    
+    public ForumDTO(String nome, String mensag, String data) {
+	this.mensag = mensag;
+	this.nome = nome;
+	this.data = data;
+    }
+
+    private String mensag, nome, data;
+
+    public String getData() {
+	return data;
+    }
+
+    public void setData(String data) {
+	this.data = data;
+    }
    
 
     public String getNome() {

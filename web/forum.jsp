@@ -4,6 +4,8 @@
     Author     : informatica
 --%>
 
+<%@page import="modelo.ForumDTO"%>
+<%@page import="dao.sql.ForumDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -53,10 +55,16 @@
                              Mostrar no chatbox: NomeUsuario(data): mensagem  
                         -->
                         <div id="chatbox">
+                            <%ForumDAO fdao = new ForumDAO();
+                               for (ForumDTO f : fdao.carregaDados()) {
+                            %>    
+                                <%=f.getData()%> <%=f.getNome()%>: <%=f.getMensag()%>
+                                <br>
+                            <% } %>
                         </div>
-                        <form name="message" method="post">
-                            <p style="text-align: left;margin-left: 27px">Nome: <input name="usernome" type="nome" id="username" size="63" /></p>                                 
-                            <p style="text-align: left;margin-left: 27px">Mensagem: <input name="usermsg" type="text" id="usermsg" size="63" /></p>
+                        <form action="mensagem" name="message" method="post">
+                            <p style="text-align: left;margin-left: 27px">Nome: <input name="usuario" type="nome" id="username" size="63" /></p>                                 
+                            <p style="text-align: left;margin-left: 27px">Mensagem: <input name="mensagem" type="text" id="usermsg" size="63" /></p>
                             <input  style=" margin-top: 25px;margin-left: 28px" name="submitmsg" type="submit"  id="submitmsg" value="Postar" />
                         </form>
                     </div>

@@ -1,4 +1,4 @@
-package modelo;
+package dao.sql;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import modelo.RankingDTO;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -18,8 +19,8 @@ import java.util.ArrayList;
  */
 public class RankingDAO {
 
-    private static final String STRING_CONEXAO = "jdbc:mysql://localhost/forum?"
-	+ "user=root&password=root";
+    private static final String STRING_CONEXAO = "jdbc:mysql://localhost/bdWeb?"
+	+ "user=root&password=alunoifc";
 
     public ArrayList carregaPontucao() {
 	ArrayList<RankingDTO> listaRetorno = new ArrayList();

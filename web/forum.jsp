@@ -13,14 +13,27 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <title>Pizza Sabor Zumbi</title>
         <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
-        <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
         <link rel="stylesheet" href="estilos.css">
-            <link rel="stylesheet" href="newcss.css"/>
+        <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+        <link rel="stylesheet" href="estilos.css">
             <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     </head>
     <body style=" background-color: black;">
+         <style>
+            .demo-layout-transparent {
+                background: url('../assets/demos/transparent.jpg') center / cover;
+            }
+            .demo-layout-transparent .mdl-layout__header,
+            .demo-layout-transparent .mdl-layout__drawer-button {
+                color: yellow;
+            }
+        </style>
         <div class="demo-layout-transparent mdl-layout mdl-js-layout">
             <header class="mdl-layout__header mdl-layout__header--transparent">
                 <div class="mdl-layout__header-row">
@@ -39,7 +52,7 @@
                     <a class="mdl-navigation__link" href="desenvolvedores.html">Desenvolvedores</a>
                     <a class="mdl-navigation__link" href="forum.jsp">Forum</a>
                 </nav>
-            </div>         
+            </div>       
             <main class="mdl-layout__content">
                 <img src="assets/coollogo_forum.png" class="displayed"/>
                 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -58,7 +71,7 @@
                             <%ForumDAO fdao = new ForumDAO();
                                for (ForumDTO f : fdao.carregaDados()) {
                             %>    
-                                <%=f.getData()%> <%=f.getNome()%>: <%=f.getMensag()%>
+                            <span style="font-size: 15px"> <%=f.getData()%> </span> <span style="color: darkorange; font-size: 17px; "> <%=f.getNome()%> : </span> <span style="font-size: 15px"> <%=f.getMensag()%> </span> 
                                 <br>
                             <% } %>
                         </div>

@@ -6,7 +6,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h3> Mensagem vazia, seu imbecil! </h3>
+        <h3> A mensagem não pode ser vazia! </h3>
         <button onclick="goBack()">Voltar</button>
 
         <script>

@@ -4,7 +4,7 @@
     Author     : informatica
 --%>
 
-<%@page import="modelo.RankingDAO"%>
+<%@page import="dao.sql.RankingDAO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="modelo.RankingDTO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -60,23 +60,27 @@
                         ArrayList<RankingDTO> list = pdao.carregaPontucao();
                         if (list.isEmpty()) {
                     %>
-                    <h2>Não há nenhuma pontuação.</h4>    
+                    <h2>Não há nenhuma pontuação.</h4> 
+
                         <%
                         } else {
-                            for (RankingDTO p : list) {
-                        %>                         
-                        <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="margin-left: 870px;
+                        %>
+                        <table width="400" class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="margin: auto;
                                margin-top: 10px;">
+
                             <thead>
                                 <tr>
                                     <th>Nome</th>
-                                    <th>Pontuacao</th>
+                                    <th style=" text-align: center">Pontuacao</th>
                                 </tr>
                             </thead>
+                            <%
+                                for (RankingDTO p : list) {
+                            %>                         
                             <tbody>
                                 <tr>
                                     <td><%=p.getNome()%></td>
-                                    <td><%=p.getPontuacao()%></td>
+                                    <td style=" text-align: center"><%=p.getPontuacao()%></td>
                                 </tr>
                                 <%
                                         }

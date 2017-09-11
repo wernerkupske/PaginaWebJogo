@@ -48,6 +48,7 @@
                     <a class="mdl-navigation__link" href="fotos.html">Fotos</a>
                     <a class="mdl-navigation__link" href="desenvolvedores.html">Desenvolvedores</a>
                     <a class="mdl-navigation__link" href="forum.jsp">Forum</a>
+                    <a class="mdl-navigation__link" href="login.jsp">Login</a>
                 </nav>
             </div>
 

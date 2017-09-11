@@ -22,7 +22,7 @@ public class ForumDAO {
 
     private static final String STRING_CONEXAO = "jdbc:mysql://localhost/bdWeb?"
             + "user=root&password=alunoifc";
-
+    
     public void insereDados(String nome, String txt, String horario){
         try{
 	    DriverManager.registerDriver(new com.mysql.jdbc.Driver());
@@ -37,7 +37,6 @@ public class ForumDAO {
 	    conn.close();
 	}catch(SQLException e){
 	    System.out.println("Erro ao inserir dados no banco.");
-	    e.printStackTrace();
 	}
 	
     }
@@ -56,8 +55,8 @@ public class ForumDAO {
 	    }
 	}catch(SQLException e){
 	    System.out.println("Erro ao carregar mensagens do banco.");
-	    e.printStackTrace();
 	}
         return ret;
     }
+    
 }

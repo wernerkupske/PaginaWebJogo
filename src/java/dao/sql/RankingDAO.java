@@ -19,7 +19,7 @@ import modelo.RankingDTO;
  */
 public class RankingDAO {
 
-    private static final String STRING_CONEXAO = "jdbc:mysql://localhost/bdWeb?"
+    private static final String STRING_CONEXAO = "jdbc:mysql://localhost/forum?"
 	+ "user=root&password=alunoifc";
 
     public ArrayList carregaPontucao() {
@@ -27,7 +27,8 @@ public class RankingDAO {
 	try {
 	    DriverManager.registerDriver(new com.mysql.jdbc.Driver());
 	    Connection conn = DriverManager.getConnection(STRING_CONEXAO);
-	    String sql = "select * from pontuacao";
+	    String sql = "select nome, score from pontuacao \n" +
+"order by score desc";
 	    // enviar o select para ser analisado pelo banco
 	    // de dados...
 	    PreparedStatement p = conn.prepareStatement(sql);

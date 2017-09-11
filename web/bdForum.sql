@@ -16,4 +16,7 @@ select * from pontuacao;
 
 insert into pontuacao values ("Werner", 100),
 ("Gabriel", 100),
-("Bruno", 100);
+("Bruno", 100),
+("Werner", 105),
+("Gabriel", 110),
+("Bruno", 200);

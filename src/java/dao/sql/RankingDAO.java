@@ -21,6 +21,7 @@ public class RankingDAO {
 
     private static final String STRING_CONEXAO = "jdbc:mysql://localhost/forum?"
 	+ "user=root&password=alunoifc";
+    
 
     public ArrayList carregaPontucao() {
 	ArrayList<RankingDTO> listaRetorno = new ArrayList();

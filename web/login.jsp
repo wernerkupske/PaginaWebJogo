@@ -22,7 +22,43 @@
         <link rel="stylesheet" href="estilos.css">
         <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     </head>
-    <body style=" background-color: black;">
+    <body style="background-color: black; ">
+        <style>
+            .demo-layout-transparent {
+                background: url('../assets/demos/transparent.jpg') center / cover;
+            }
+            .demo-layout-transparent .mdl-layout__header,
+            .demo-layout-transparent .mdl-layout__drawer-button {
+                color: yellow;
+            }
+        </style>
 
+        <div class="demo-layout-transparent mdl-layout mdl-js-layout">
+            <header class="mdl-layout__header mdl-layout__header--transparent">
+                <div class="mdl-layout__header-row">
+                    <!-- Title -->
+                    <span class="mdl-layout-title">Menu</span>
+                </div>
+            </header>
+            <div class="mdl-layout__drawer">
+                <span class="mdl-layout-title">Menu</span>
+                <nav class="mdl-navigation">
+                    <a class="mdl-navigation__link" href="index.html">Página Inicial</a>
+                    <a class="mdl-navigation__link" href="sobreJogo.html">Sobre o jogo</a>
+                    <a class="mdl-navigation__link" href="ranking.jsp">Ranking</a>
+                    <a class="mdl-navigation__link" href="download.html">Download</a>
+                    <a class="mdl-navigation__link" href="fotos.html">Fotos</a>
+                    <a class="mdl-navigation__link" href="desenvolvedores.html">Desenvolvedores</a>
+                    <a class="mdl-navigation__link" href="forum.jsp">Forum</a>
+                    <a class="mdl-navigation__link" href="login.jsp">Login</a>
+                </nav>
+            </div>
+
+            <main class="mdl-layout__content">
+                <img src="assets/coollogo_login.png" class="displayed"/>
+
+                
+            </main>
+        </div>
     </body>
 </html>

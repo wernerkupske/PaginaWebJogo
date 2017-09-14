@@ -4,6 +4,7 @@
     Author     : informatica
 --%>
 
+<%@page import="dao.sql.LoginDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -56,8 +57,23 @@
 
             <main class="mdl-layout__content">
                 <img src="assets/coollogo_login.png" class="displayed"/>
+                <br> <br>
 
-                
+                <div class="form">
+                    <%
+                        LoginDAO lg = new LoginDAO();
+
+                    %>
+                    <form action="mensagem" method="post">
+                        Usuário: <input  type="text" name="usuario"> <br> <br>
+                       
+                        Senha:<span style="color: black">---</span><input  type="password" name="senha"> <br> <br>
+                        
+                        <div style=" margin-left: 15%;"> <input  type="submit" value="Login"> </div>                    
+                    </form>
+
+                </div>
+
             </main>
         </div>
     </body>

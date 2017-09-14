@@ -20,7 +20,7 @@ import modelo.ForumDTO;
  */
 public class ForumDAO {
 
-    private static final String STRING_CONEXAO = "jdbc:mysql://localhost/bdWeb?"
+    private static final String STRING_CONEXAO = "jdbc:mysql://localhost/forum?"
             + "user=root&password=alunoifc";
     
     public void insereDados(String nome, String txt, String horario){

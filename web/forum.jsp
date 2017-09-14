@@ -80,7 +80,7 @@
                             <p style="text-align: left;margin-left: 27px">Nome: <input name="usuario" type="nome" id="username" size="63" /></p>                                 
                             <p style="text-align: left;margin-left: 27px">Mensagem: <input name="mensagem" type="text" id="usermsg" size="63" /></p>
                             <input  style=" margin-top: 25px;margin-left: 28px" name="submitmsg" type="submit"  id="submitmsg" value="Postar" />
-                            <a style=" text-align: right;margin-right: 27px;float: right" href="">Login</a>
+                            <a style=" text-align: right;margin-right: 27px;float: right" href="login.jsp">Login</a>
                         </form>
                     </div>
                 </html>

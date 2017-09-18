@@ -62,7 +62,10 @@
                 <div class="form">
                     <%
                         LoginDAO lg = new LoginDAO();
-
+                        lg.verificaUsu("teste", 1234);
+                        if(){
+                            
+                        }
                     %>
                     <form action="mensagem" method="post">
                         Usuário: <input  type="text" name="usuario"> <br> <br>

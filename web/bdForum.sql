@@ -12,6 +12,11 @@ create table pontuacao(
     score int not null
 );
 
+create table login (
+    login varchar(15) primary key,
+    senha varchar(15)
+);
+
 select * from pontuacao;
 
 insert into pontuacao values ("Werner", 100),

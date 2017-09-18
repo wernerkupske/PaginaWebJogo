@@ -1,34 +1,32 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package modelo;
 
-/**
- *
- * @author informatica
- */
 public class LoginDTO {
+
+    public LoginDTO(String user, int cod) {
+        this.user = user;
+        this.senha = cod;
+    }
     private String user;
-    private int cod;
+    private int senha;
 
     public String getUser() {
         return user;
     }
 
-    public void setUser(String user) {
-        this.user = user;
+    public void setUser(String user) throws Exception {
+        if (!user.isEmpty()) {
+            this.user = user;
+        } else {
+            throw new Exception("nome invalido");
+        }
     }
 
-    public int getCod() {
-        return cod;
+    public int getSenha() {
+        return senha;
     }
 
-    public void setCod(int cod) {
-        this.cod = cod;
+    public void setSenha(int senha) {
+        this.senha = senha;
     }
-    
-    
-    
+
 }

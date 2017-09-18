@@ -16,14 +16,14 @@ import java.sql.SQLException;
  */
 public class LoginDAO {
     
-     private static final String STRING_CONEXAO = "jdbc:mysql://localhost/bdWeb?"
+     private static final String STRING_CONEXAO = "jdbc:mysql://localhost/forum?"
             + "user=root&password=alunoifc";
     
     public void verificaUsu(String user, int cod){
         try{
 	    DriverManager.registerDriver(new com.mysql.jdbc.Driver());
 	    Connection conn = DriverManager.getConnection(STRING_CONEXAO);
-	    String sql = "insert into forum(nome, msg, strData) values (?,?,?)";
+	    String sql = "insert into forum(login, senha) values (?,?)";
 	    PreparedStatement p = conn.prepareStatement(sql);
 	    // definir o valor de cada um dos parâmetros...
 	    p.setString(1, user);

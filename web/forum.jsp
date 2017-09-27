@@ -22,10 +22,10 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
         <link rel="stylesheet" href="estilos.css">
-            <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+        <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     </head>
     <body style=" background-color: black;">
-         <style>
+        <style>
             .demo-layout-transparent {
                 background: url('../assets/demos/transparent.jpg') center / cover;
             }
@@ -54,6 +54,17 @@
                     <a class="mdl-navigation__link" href="login.jsp">Login</a>
                 </nav>
             </div>       
+
+            <%
+
+                HttpSession ses = request.getSession(true);
+
+                // pegar a variavel adminLogado da sessao
+                Boolean adminLogado = (Boolean) ses.getAttribute("adminLogado");
+
+            %>
+
+
             <main class="mdl-layout__content">
                 <img src="assets/coollogo_forum.png" class="displayed"/>
                 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -70,11 +81,15 @@
                         -->
                         <div id="chatbox">
                             <%ForumDAO fdao = new ForumDAO();
-                               for (ForumDTO f : fdao.carregaDados()) {
+                                for (ForumDTO f : fdao.carregaDados()) {
                             %>    
                             <span style="font-size: 15px"> <%=f.getData()%> </span> <span style="color: darkorange; font-size: 17px; "> <%=f.getNome()%> : </span> <span style="font-size: 15px"> <%=f.getMensag()%> </span> 
-                                <br>
-                            <% } %>
+                            <br>
+                              <% if ((adminLogado != null) && (adminLogado)) {
+                              %>
+                              <a href="#">excluir</a>
+                              <% } // if%> 
+                            <% } // for%>
                         </div>
                         <form action="mensagem" name="message" method="post">
                             <p style="text-align: left;margin-left: 27px">Nome: <input name="usuario" type="nome" id="username" size="63" /></p>                                 

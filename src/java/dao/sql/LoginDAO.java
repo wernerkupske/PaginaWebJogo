@@ -23,7 +23,7 @@ public class LoginDAO {
         try{
 	    DriverManager.registerDriver(new com.mysql.jdbc.Driver());
 	    Connection conn = DriverManager.getConnection(STRING_CONEXAO);
-	    String sql = "insert into forum(login, senha) values (?,?)";
+	    String sql = "select (login, senha) from forum";
 	    PreparedStatement p = conn.prepareStatement(sql);
 	    // definir o valor de cada um dos parâmetros...
 	    p.setString(1, user);

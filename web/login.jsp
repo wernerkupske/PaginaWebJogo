@@ -25,18 +25,7 @@
         <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     </head>
     <body style="background-color: black; ">
-        <% User us = new User();
-            String login = request.getParameter("login");
-            String senha = request.getParameter("senha");
-            boolean status = us.verificarUsuario(login, senha);
-
-            if (us.result == true) {
-                out.println("Login feito com sucesso " + us.nome);
-            } else {
-                out.println("login ou senha inválidos");
-            }
-        %>
-        
+     
         <!-- criar página formulário(quinto passo) -->
         <style>
             .demo-layout-transparent {
@@ -74,17 +63,20 @@
                 <br> <br>
 
                 <div class="form">
-                    <%
-
-                    %>
-                    <form action="mensagem" method="post">
-                        Usuário: <input  type="text" name="usuario"> <br> <br>
+                    <table>
+                        <tr>
+                            
+                        </tr>
+                    </table>
+                    <form action="codLogin" method="post">
+                        Usuário: <input type="text" name="login"> <br> <br>
+                        Outro login: <input type="text" name="nome"> <br><br>
 
                         Senha:<span style="color: black">---</span><input  type="password" name="senha"> <br> <br>
 
                         <div style=" margin-left: 15%;"> <input  type="submit" value="Login"> </div>                    
                     </form>
-
+                    
                 </div>
 
             </main>

@@ -22,14 +22,14 @@ public class LoginDAO {
     public void verificaUsu(String user, int cod){
         try{
 	    DriverManager.registerDriver(new com.mysql.jdbc.Driver());
-	    Connection conn = DriverManager.getConnection(STRING_CONEXAO);
-	    String sql = "select (login, senha) from forum";
-	    PreparedStatement p = conn.prepareStatement(sql);
-	    // definir o valor de cada um dos parâmetros...
-	    p.setString(1, user);
-	    p.setInt(2, cod);
-	    p.execute();
-	    conn.close();
+            try (Connection conn = DriverManager.getConnection(STRING_CONEXAO)) {
+                String sql = "select (login, senha) from forum";
+                PreparedStatement p = conn.prepareStatement(sql);
+                // definir o valor de cada um dos parâmetros...
+                p.setString(1, user);
+                p.setInt(2, cod);
+                p.execute();
+            }
 	}catch(SQLException e){
 	    System.out.println("Erro ao verificar usuário no banco de dados.");
 	}

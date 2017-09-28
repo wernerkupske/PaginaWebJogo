@@ -80,22 +80,29 @@
                              Mostrar no chatbox: NomeUsuario(data): mensagem  
                         -->
                         <div id="chatbox">
-                            <%ForumDAO fdao = new ForumDAO();
+                            <% ForumDAO fdao = new ForumDAO();
                                 for (ForumDTO f : fdao.carregaDados()) {
                             %>    
                             <span style="font-size: 15px"> <%=f.getData()%> </span> <span style="color: darkorange; font-size: 17px; "> <%=f.getNome()%> : </span> <span style="font-size: 15px"> <%=f.getMensag()%> </span> 
                             <br>
-                              <% if ((adminLogado != null) && (adminLogado)) {
-                              %>
-                              <a href="#">excluir</a>
-                              <% } // if%> 
+                            <% if ((adminLogado != null) && (adminLogado)) {
+                            %>
+                            <a href="#">excluir</a>
+                            <% } // if%> 
                             <% } // for%>
                         </div>
                         <form action="mensagem" name="message" method="post">
                             <p style="text-align: left;margin-left: 27px">Nome: <input name="usuario" type="nome" id="username" size="63" /></p>                                 
                             <p style="text-align: left;margin-left: 27px">Mensagem: <input name="mensagem" type="text" id="usermsg" size="63" /></p>
                             <input  style=" margin-top: 25px;margin-left: 28px" name="submitmsg" type="submit"  id="submitmsg" value="Postar" />
+                            <% 
+                                if (adminLogado == null) {
+                            %>
                             <a style=" text-align: right;margin-right: 27px;float: right" href="login.jsp">Login</a>
+                            <% } else {%>
+                            <a style=" text-align: right;margin-right: 27px;float: right" href="forum.jsp">Deslogar</a>
+                            <% }%>
+
                         </form>
                     </div>
                 </html>

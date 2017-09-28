@@ -1,15 +1,8 @@
 package controle;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -44,7 +37,6 @@ public class codLogin extends HttpServlet {
                 /* TODO output your page here. You may use following sample code. */
                 User us = new User();
                 String login = request.getParameter("login");
-                String nome = request.getParameter("nome");
                 String senha = request.getParameter("senha");
                 boolean status = false;
                 try {
@@ -52,7 +44,7 @@ public class codLogin extends HttpServlet {
                 } catch (SQLException ex) {
                     out.println("erro no sql: " + ex.getMessage());
                 }
-                if (status == true) {
+                if (status) {
                     //out.println("Login efetuado com sucesso ");
                     
                     // sinaliza de que o admin estah logado

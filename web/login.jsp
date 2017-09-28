@@ -22,10 +22,11 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
         <link rel="stylesheet" href="estilos.css">
+        <link rel="stylesheetb" href="https://code.getmdl.io/1.3.0/material.deep_orange-red.min.css" /> 
         <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     </head>
     <body style="background-color: black; ">
-     
+
         <!-- criar página formulário(quinto passo) -->
         <style>
             .demo-layout-transparent {
@@ -63,20 +64,39 @@
                 <br> <br>
 
                 <div class="form">
-                    <table>
-                        <tr>
-                            
-                        </tr>
-                    </table>
                     <form action="codLogin" method="post">
+                        <table >
+                            <tr>
+                                <td>
+                                    Usuário:                                
+                                    <input  type="text" name="login" value="" size="20">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Senha:
+                                    <input style="margin-left: 9%" type="password" name="senha" value="" size="20">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <br>
+                                    <button type="submit" value="Login" class="mdl-button mdl-js-button mdl-button--raised">
+                                        Login
+                                    </button>
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                    <br>
+
+                    <!--<form action="codLogin" method="post">
                         Usuário: <input type="text" name="login"> <br> <br>
-                        Outro login: <input type="text" name="nome"> <br><br>
-
                         Senha:<span style="color: black">---</span><input  type="password" name="senha"> <br> <br>
-
                         <div style=" margin-left: 15%;"> <input  type="submit" value="Login"> </div>                    
                     </form>
-                    
+                    -->
+
                 </div>
 
             </main>

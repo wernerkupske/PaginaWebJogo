@@ -36,7 +36,7 @@ public class User {
     public boolean verificarUsuario(String login, String senha) throws SQLException {
         String sql = "";
         Connection conn = conectarBd();
-        sql += "select login from login ";
+        sql += "select login, senha from login ";
         sql += "where login = " + "'" + login + "'";
         sql += " and senha = " + "" + senha + ";";
         try {

@@ -75,7 +75,7 @@
                             <tr>
                                 <td>
                                     Senha:
-                                    <input style="margin-left: 9%" type="password" name="senha" value="" size="20">
+                                    <input style="margin-left: 7.7%" type="password" name="senha" value="" size="20">
                                 </td>
                             </tr>
                             <tr>

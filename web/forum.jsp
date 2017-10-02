@@ -83,11 +83,12 @@
                             <% ForumDAO fdao = new ForumDAO();
                                 for (ForumDTO f : fdao.carregaDados()) {
                             %>    
-                            <span style="font-size: 15px"> <%=f.getData()%> </span> <span style="color: darkorange; font-size: 17px; "> <%=f.getNome()%> : </span> <span style="font-size: 15px"> <%=f.getMensag()%> </span> 
+                            <a href="#">excluir</a><span style="font-size: 15px"> <%=f.getData()%> </span> <span style="color: darkorange; font-size: 17px; "> <%=f.getNome()%> : </span> <span style="font-size: 15px"> <%=f.getMensag()%> </span>   
                             <br>
+
                             <% if ((adminLogado != null) && (adminLogado)) {
                             %>
-                            <a href="#">excluir</a>
+
                             <% } // if%> 
                             <% } // for%>
                         </div>

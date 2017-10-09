@@ -25,6 +25,3 @@ insert into pontuacao values ("Werner", 100),
 ("Werner", 105),
 ("Gabriel", 110),
 ("Bruno", 200);
-
-select * from login;
-select * from pontuacao;

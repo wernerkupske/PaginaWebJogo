@@ -17,7 +17,7 @@ create table login (
     senha varchar(15)
 );
 
-insert into login values ("adm", "adm");
+insert into login values ("teste", "123");
 
 insert into pontuacao values ("Werner", 100),
 ("Gabriel", 100),

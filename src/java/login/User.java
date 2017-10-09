@@ -37,17 +37,16 @@ public class User {
         String sql = "";
         Connection conn = conectarBd();
         sql += "select login, senha from login ";
-        sql += "where login = " + "'" + login + "'";
-        sql += " and senha = " + "" + senha + ";";
+        sql += "where login = '"+login+"'";
+        sql += " and senha = '"+senha+"'";
         try {
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(sql);
             if (rs.next()) {
                 result = true;
-                nome = rs.getString("nome");
             }
         } catch (SQLException ex) {
-
+            
         }
         return result;
     }

@@ -65,7 +65,7 @@
 
                 <div class="form">
                     <form action="codLogin" method="post">
-                        <table >
+                        <table>
                             <tr>
                                 <td>
                                     Usuário:                                
@@ -89,16 +89,7 @@
                         </table>
                     </form>
                     <br>
-
-                    <!--<form action="codLogin" method="post">
-                        Usuário: <input type="text" name="login"> <br> <br>
-                        Senha:<span style="color: black">---</span><input  type="password" name="senha"> <br> <br>
-                        <div style=" margin-left: 15%;"> <input  type="submit" value="Login"> </div>                    
-                    </form>
-                    -->
-
                 </div>
-
             </main>
         </div>
     </body>

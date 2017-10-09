@@ -40,6 +40,11 @@ public class ForumDAO {
 	}
 	
     }
+    
+    //ver como fazer com o professor
+    public void excluiMsg(){
+        
+    }
 
     public ArrayList<ForumDTO> carregaDados() throws SQLException {
 	ArrayList<ForumDTO> ret = new ArrayList();

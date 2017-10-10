@@ -41,6 +41,11 @@
     width: 700px;
 }
 
+.erro{
+    background-color: black;
+    
+}
+
 .formato2{
     text-align: left;
     color: white;

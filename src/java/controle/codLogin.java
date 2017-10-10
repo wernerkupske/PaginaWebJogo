@@ -52,7 +52,8 @@ public class codLogin extends HttpServlet {
                     RequestDispatcher rd = request.getRequestDispatcher("forum.jsp");
                     rd.forward(request, response);
                 } else {
-                    out.println("login ou senha inválidos");
+                    RequestDispatcher rd = request.getRequestDispatcher("erro.jsp");
+                    rd.forward(request, response);
                 }
             } catch (Exception ex) {
                 out.print("erro no controlador: " + ex.getMessage());

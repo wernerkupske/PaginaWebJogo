@@ -1,6 +1,7 @@
 drop database if exists forum ;
 create database forum;
 use forum;
+
 create table forum(
 	nome varchar(15) not null,
         msg varchar(100) not null,
@@ -18,6 +19,9 @@ create table login (
 );
 
 insert into login values ("teste", "123");
+insert into forum values ("Bruno","Somos enviados para analisar esse site.","viajante do tempo"),
+("Gabriel","Para mim está uma graça!","viajante do tempo"),
+("Werner","Jamais voltarei aqui!","viajante do tempo");
 
 insert into pontuacao values ("Werner", 100),
 ("Gabriel", 100),

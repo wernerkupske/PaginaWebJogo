@@ -83,9 +83,13 @@
                             <% ForumDAO fdao = new ForumDAO();
                                 for (ForumDTO f : fdao.carregaDados()) {
                             %>    
+                            <% if (adminLogado == null) { %>
+                            <a href=""> </a> <span style="color: darkorange; font-size: 17px; "> <%=f.getNome()%></span><span style="font-size: 15px"> <%=f.getData()%> </span> :<span style="font-size: 15px"> <%=f.getMensag()%> </span>   
+                            <br>
+                            <% } else { %>
                             <a href=""> <img src="assets/lixeira.png"/> </a> <span style="color: darkorange; font-size: 17px; "> <%=f.getNome()%></span><span style="font-size: 15px"> <%=f.getData()%> </span> :<span style="font-size: 15px"> <%=f.getMensag()%> </span>   
                             <br>
-
+                            <% } %>
                             <% if ((adminLogado != null) && (adminLogado)) {
                             %>
 
@@ -99,9 +103,9 @@
                             <% 
                                 if (adminLogado == null) {
                             %>
-                                <a style=" text-align: right;margin-right: 27px;float: right" href="login.jsp">Logar</a>
+                            <a style=" text-align: right;margin-right: 27px;float: right" href="login.jsp">Logar</a>
                             <% } else {%>
-                                <a style=" text-align: right;margin-right: 27px;float: right" href="desloga">Deslogar</a>
+                            <a style=" text-align: right;margin-right: 27px;float: right" href="desloga">Deslogar</a>
                             <% }%>
 
                         </form>

@@ -18,6 +18,11 @@ create table login (
     senha varchar(15)
 );
 
+create table pontuacaoInfinito(
+    nomeInf varchar(15) not null,
+    scoreInf int
+);
+
 insert into login values ("teste", "123");
 insert into forum values ("Bruno","Somos enviados para analisar esse site.","viajante do tempo"),
 ("Gabriel","Para mim está uma graça!","viajante do tempo"),
@@ -29,3 +34,9 @@ insert into pontuacao values ("Werner", 100),
 ("Werner", 105),
 ("Gabriel", 110),
 ("Bruno", 200);
+
+insert into table pontuacaoInfinito values ("Werner", 10),
+("Gabriel", 20),
+("Bruno", 30);
+
+

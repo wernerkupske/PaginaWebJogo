@@ -4,6 +4,8 @@
     Author     : informatica
 --%>
 
+<%@page import="modelo.RankingInfinitoDTO"%>
+<%@page import="dao.sql.RankingInfinitoDAO"%>
 <%@page import="dao.sql.RankingDAO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="modelo.RankingDTO"%>
@@ -56,12 +58,13 @@
                 <img src="assets/coollogo_ranking.png" class="displayed"/>
 
                 <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
+                    <h2> Ranking: Modo Campanha </h2>
                     <%
                         RankingDAO pdao = new RankingDAO();
                         ArrayList<RankingDTO> list = pdao.carregaPontucao();
                         if (list.isEmpty()) {
                     %>
-                    <h2>Não há nenhuma pontuação.</h4> 
+                    <h2>Não há nenhuma pontuação.</h2> 
 
                         <%
                         } else {
@@ -77,6 +80,46 @@
                             </thead>
                             <%
                                 for (RankingDTO p : list) {
+                            %>                         
+                            <tbody>
+                                <tr>
+                                    <td><%=p.getNome()%></td>
+                                    <td style=" text-align: center"><%=p.getPontuacao()%></td>
+                                </tr>
+                                <%
+                                        }
+                                    }
+                                %>
+                            </tbody>
+                        </table>
+                </div>    
+            </main>
+            <main class="mdl-layout__content">
+
+                <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
+                    <h2> Ranking: Modo Infinito </h2>
+                    <%
+                        RankingInfinitoDAO pontInfdao = new RankingInfinitoDAO();
+                        ArrayList<RankingInfinitoDTO> listInf = pontInfdao.carregaPontuacao();
+                        if (listInf.isEmpty()) {
+                           
+                    %>
+                    <h2>Não há nenhuma pontuação.</h2> 
+
+                        <%
+                        } else {
+                        %>
+                        <table width="400" class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="margin: auto;
+                               margin-top: 10px;">
+
+                            <thead>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th style=" text-align: center">Pontuacao</th>
+                                </tr>
+                            </thead>
+                            <%
+                                for (RankingInfinitoDTO p : listInf) {
                             %>                         
                             <tbody>
                                 <tr>

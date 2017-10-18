@@ -4,6 +4,7 @@
     Author     : informatica
 --%>
 
+<%@page import="Utilidades.Criptografia"%>
 <%@page import="dao.sql.LoginDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import = "login.User" %> 
@@ -70,12 +71,14 @@
                                 <td>
                                     Usuário:                                
                                     <input  type="text" name="login" value="" size="20">
+                                    <% //Criptografia.criptografar(text); %>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
                                     Senha:
                                     <input style="margin-left: 7.7%" type="password" name="senha" value="" size="20">
+                                    <% //Criptografia.criptografar(password); %> 
                                 </td>
                             </tr>
                             <tr>

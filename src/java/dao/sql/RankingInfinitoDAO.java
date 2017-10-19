@@ -23,7 +23,7 @@ public class RankingInfinitoDAO {
                 PreparedStatement p = conn.prepareStatement(sql);
                 ResultSet rs = p.executeQuery();
                 while (rs.next()) {
-                    RankingInfinitoDTO rankingInfinitoDTO = new RankingInfinitoDTO(rs.getString("nome"), rs.getInt("score"));
+                    RankingInfinitoDTO rankingInfinitoDTO = new RankingInfinitoDTO(rs.getString("nome"), rs.getInt("scoreInf"));
                     listaRetorno.add(rankingInfinitoDTO);
                 }
             }

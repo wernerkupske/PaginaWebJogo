@@ -1,5 +1,6 @@
 package controle;
 
+import Utilidades.Criptografia;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -39,7 +40,8 @@ public class codLogin extends HttpServlet {
                 String senha = request.getParameter("senha");
                 boolean status = false;
                 try {
-                    status = us.verificarUsuario(login, senha);
+                    
+                    status = us.verificarUsuario(Criptografia.criptografar(login), Criptografia.criptografar(senha));
                 } catch (SQLException ex) {
                     out.println("erro no sql: " + ex.getMessage());
                 }
@@ -48,15 +50,19 @@ public class codLogin extends HttpServlet {
                     // sinaliza de que o admin estah logado
                     HttpSession ses = request.getSession(true);
                     ses.setAttribute("adminLogado", true);
+                    //Criptografia.criptografar(senha);
+                    System.out.println(senha);
                     // retorna à página index
                     RequestDispatcher rd = request.getRequestDispatcher("forum.jsp");
                     rd.forward(request, response);
                 } else {
                     RequestDispatcher rd = request.getRequestDispatcher("erro.jsp");
                     rd.forward(request, response);
+                    //Criptografia.criptografar(senha);
                 }
             } catch (Exception ex) {
                 out.print("erro no controlador: " + ex.getMessage());
+                
             }
 
         }

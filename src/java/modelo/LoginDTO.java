@@ -6,6 +6,7 @@ public class LoginDTO {
         this.user = user;
         this.senha = cod;
     }
+    
     private String user;
     private int senha;
 

@@ -27,12 +27,13 @@ public class ForumDAO {
         try{
 	    DriverManager.registerDriver(new com.mysql.jdbc.Driver());
 	    Connection conn = DriverManager.getConnection(STRING_CONEXAO);
-	    String sql = "insert into forum(nome, msg, strData) values (?,?,?)";
+	    String sql = "insert into forum(nome, msg, strData, id) values (?,?,?)";
 	    PreparedStatement p = conn.prepareStatement(sql);
 	    // definir o valor de cada um dos parâmetros...
 	    p.setString(1, nome);
 	    p.setString(2, txt);
 	    p.setString(3, horario);
+
 	    p.execute();
 	    conn.close();
 	}catch(SQLException e){

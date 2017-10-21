@@ -48,7 +48,7 @@
                     <a class="mdl-navigation__link" href="sobreJogo.html">Sobre o jogo</a>
                     <a class="mdl-navigation__link" href="ranking.jsp">Ranking</a>
                     <a class="mdl-navigation__link" href="download.html">Download</a>
-                    <a class="mdl-navigation__link" href="fotos.html">Fotos</a>
+                    <a class="mdl-navigation__link" href="sprites.html">Sprites</a>
                     <a class="mdl-navigation__link" href="desenvolvedores.html">Desenvolvedores</a>
                     <a class="mdl-navigation__link" href="forum.jsp">Forum</a>
                     <a class="mdl-navigation__link" href="login.jsp">Login</a>

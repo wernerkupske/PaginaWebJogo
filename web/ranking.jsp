@@ -4,8 +4,6 @@
     Author     : informatica
 --%>
 
-<%@page import="modelo.RankingInfinitoDTO"%>
-<%@page import="dao.sql.RankingInfinitoDAO"%>
 <%@page import="dao.sql.RankingDAO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="modelo.RankingDTO"%>
@@ -66,74 +64,37 @@
                     %>
                     <h2>Não há nenhuma pontuação.</h2> 
 
-                        <%
-                        } else {
-                        %>
-                        <table width="400" class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="margin: auto;
-                               margin-top: 10px;">
-
-                            <thead>
-                                <tr>
-                                    <th>Nome</th>
-                                    <th style=" text-align: center">Pontuacao</th>
-                                </tr>
-                            </thead>
-                            <%
-                                for (RankingDTO p : list) {
-                            %>                         
-                            <tbody>
-                                <tr>
-                                    <td><%=p.getNome()%></td>
-                                    <td style=" text-align: center"><%=p.getPontuacao()%></td>
-                                </tr>
-                                <%
-                                        }
-                                    }
-                                %>
-                            </tbody>
-                        </table>
-                </div>    
-            </main>
-            <main class="mdl-layout__content">
-
-                <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
-                    <h2> Ranking: Modo Infinito </h2>
                     <%
-                        RankingInfinitoDAO pontInfdao = new RankingInfinitoDAO();
-                        ArrayList<RankingInfinitoDTO> listInf = pontInfdao.carregaPontuacao();
-                        if (listInf.isEmpty()) {
-                           
+                    } else {
                     %>
-                    <h2>Não há nenhuma pontuação.</h2> 
+                    <table width="400" class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="margin: auto;
+                           margin-top: 10px;">
 
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th style=" text-align: center">Pontuacao</th>
+                            </tr>
+                        </thead>
                         <%
-                        } else {
-                        %>
-                        <table width="400" class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="margin: auto;
-                               margin-top: 10px;">
-
-                            <thead>
-                                <tr>
-                                    <th>Nome</th>
-                                    <th style=" text-align: center">Pontuacao</th>
-                                </tr>
-                            </thead>
+                            for (RankingDTO p : list) {
+                        %>                         
+                        <tbody>
+                            <tr>
+                                <td> <%=p.getIdJogador()%> </td>
+                                <td><%=p.getNome()%></td>
+                                <td style=" text-align: center"><%=p.getPontuacao()%></td>
+                                <td style="text-align: center"> <%=p.getModoDeJogo()%> </td>
+                            </tr>
                             <%
-                                for (RankingInfinitoDTO p : listInf) {
-                            %>                         
-                            <tbody>
-                                <tr>
-                                    <td><%=p.getNome()%></td>
-                                    <td style=" text-align: center"><%=p.getPontuacao()%></td>
-                                </tr>
-                                <%
-                                        }
                                     }
-                                %>
-                            </tbody>
-                        </table>
+                                }
+                            %>
+                        </tbody>
+                    </table>
                 </div>    
             </main>
+
         </div>
     </body>
 </html>

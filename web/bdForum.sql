@@ -2,16 +2,25 @@ drop database if exists forum ;
 create database forum;
 use forum;
 
-create table forum(
-	nome varchar(15) not null,
-        msg varchar(100) not null,
-        strData varchar(100) not null,
-        id int not null auto_increment
+create table jogador(
+    id_jogador int primary key auto_increment,
+    nickname varchar(60) not null,
+    senha varchar(60) not null
 );
 
-create table pontuacao(
+create table jogada(
+    id_jogada int primary key auto_increment,
+    score bigint,
+    modo_jogo enum('CAMPANHA','INFINITO') not null,
+    id_jogador int not null,
+    foreign key(id_jogador) references jogador(id_jogador)
+);
+
+create table forum(
     nome varchar(15) not null,
-    score int not null
+    msg varchar(100) not null,
+    strData varchar(100) not null,
+    id int not null auto_increment primary key
 );
 
 create table login (
@@ -19,25 +28,4 @@ create table login (
     senha varchar(60)
 );
 
-create table pontuacaoInfinito(
-    nomeInf varchar(15) not null,
-    scoreInf int not null
-);
-
 insert into login values ("698DC19D489C4E4DB73E28A713EAB07B", "202CB962AC59075B964B07152D234B70");
-
-
-insert into pontuacao values ("Werner", 100),
-("Gabriel", 100),
-("Bruno", 100),
-("Werner", 105),
-("Gabriel", 110),
-("Bruno", 200);
-
-insert into pontuacaoInfinito values ("Werner", 10),
-("Gabriel", 20),
-("Bruno", 30);
-
-select * from forum;
-
-

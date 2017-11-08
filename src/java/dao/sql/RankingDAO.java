@@ -18,15 +18,16 @@ public class RankingDAO {
         try {
             DriverManager.registerDriver(new com.mysql.jdbc.Driver());
             Connection conn = DriverManager.getConnection(STRING_CONEXAO);
-            String sql = "select nome, score from pontuacao \n"
-                    + "order by score desc";
+            String sql = "select j.nickname, j.id_jogador, p.score, p.modo_jogo from jogador j "
+                    + "inner join jogada p on j.id_jogador = p.id_jogador"
+                    + "group by score desc";
             // enviar o select para ser analisado pelo banco
             // de dados...
             PreparedStatement p = conn.prepareStatement(sql);
             // definir o valor de cada um dos parâmetros...
             ResultSet rs = p.executeQuery();
             while (rs.next()) {
-                RankingDTO rankingDTO = new RankingDTO(rs.getString("nome"), rs.getInt("score"));
+                RankingDTO rankingDTO = new RankingDTO(rs.getInt("idJogador"), rs.getString("nome"), rs.getInt("score"), rs.getString("modoDeJogo"));
                 listaRetorno.add(rankingDTO);
             }
             conn.close();

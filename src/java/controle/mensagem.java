@@ -29,6 +29,7 @@ public class mensagem extends HttpServlet {
 	DateFormat dataFormat = new SimpleDateFormat("HH:mm");
 	Date date = new Date();
 	String data = "(" + dataFormat.format(date) + ")";
+        int id = 0;
 	if(mensagem.equals("") || mensagem.equals("null")){
 	    RequestDispatcher rd = request.getRequestDispatcher("erro.jsp");
 	    rd.forward(request, response);
@@ -43,7 +44,7 @@ public class mensagem extends HttpServlet {
 		nome = nome.substring(0, 99);
 	    }
 	    ForumDAO fdao = new ForumDAO();
-	    fdao.insereDados(nome, mensagem, data);
+	    fdao.insereDados(nome, mensagem, data, id);
 	    RequestDispatcher rd = request.getRequestDispatcher("forum.jsp");
 	    rd.forward(request, response);
 	}

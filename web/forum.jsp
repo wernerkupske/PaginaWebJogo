@@ -87,7 +87,7 @@
                             <a href=""> </a> <span style="color: darkorange; font-size: 17px; "> <%=f.getNome()%></span><span style="font-size: 15px"> <%=f.getData()%> </span> :<span style="font-size: 15px"> <%=f.getMensag()%> </span>   
                             <br>
                             <% } else { %>
-                            <a href=""> <img src="assets/lixeira.png"/> </a> <span style="color: darkorange; font-size: 17px; "> <%=f.getNome()%></span><span style="font-size: 15px"> <%=f.getData()%> </span> :<span style="font-size: 15px"> <%=f.getMensag()%> </span>   
+                            <a href="excluiMsg" <%=f.getId()%> > <img  src="assets/lixeira.png"/> </a> <span style="color: darkorange; font-size: 17px; "> <%=f.getNome()%></span><span style="font-size: 15px"> <%=f.getData()%> </span> :<span style="font-size: 15px"> <%=f.getMensag()%> </span>   
                             <br>
                             <% } %>
                             <% if ((adminLogado != null) && (adminLogado)) {

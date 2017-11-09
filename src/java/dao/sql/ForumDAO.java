@@ -23,17 +23,17 @@ public class ForumDAO {
     private static final String STRING_CONEXAO = "jdbc:mysql://localhost/forum?"
             + "user=root&password=alunoifc";
     
-    public void insereDados(String nome, String txt, String horario){
+    public void insereDados(String nome, String txt, String horario, int id){
         try{
 	    DriverManager.registerDriver(new com.mysql.jdbc.Driver());
 	    Connection conn = DriverManager.getConnection(STRING_CONEXAO);
-	    String sql = "insert into forum(nome, msg, strData, id) values (?,?,?)";
+	    String sql = "insert into forum(nome, msg, strData, id) values (?,?,?,?)";
 	    PreparedStatement p = conn.prepareStatement(sql);
 	    // definir o valor de cada um dos parâmetros...
 	    p.setString(1, nome);
 	    p.setString(2, txt);
 	    p.setString(3, horario);
-
+            p.setInt(4, id);
 	    p.execute();
 	    conn.close();
 	}catch(SQLException e){
@@ -42,9 +42,17 @@ public class ForumDAO {
 	
     }
     
-    //ver como fazer com o professor
-    public void excluiMsg(){
-        
+    public void excluiMsg(int id){
+        try{
+	    DriverManager.registerDriver(new com.mysql.jdbc.Driver());
+	    Connection conn = DriverManager.getConnection(STRING_CONEXAO);
+	    String sql = "delete from forum where id=?;";
+	    PreparedStatement p = conn.prepareStatement(sql);
+	    p.execute();
+	    conn.close();
+	}catch(SQLException e){
+	    System.out.println("Erro ao excluir dados do banco.");
+	}
     }
 
     public ArrayList<ForumDTO> carregaDados() throws SQLException {
@@ -56,7 +64,7 @@ public class ForumDAO {
 	    PreparedStatement p = conn.prepareStatement(sql);
 	    ResultSet rs = p.executeQuery();
 	    while (rs.next()) {
-		ForumDTO dto = new ForumDTO(rs.getString("nome"), rs.getString("msg"), rs.getString("strData"));
+		ForumDTO dto = new ForumDTO(rs.getString("nome"), rs.getString("msg"), rs.getString("strData"), rs.getInt("id"));
 		ret.add(dto);
 	    }
 	}catch(SQLException e){

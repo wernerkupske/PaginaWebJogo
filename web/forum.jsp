@@ -17,6 +17,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
         <link rel="stylesheet" href="estilos.css">
+        <link rel="shortcut icon" href="assets/Pizza Normal.png"> 
         <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -83,24 +84,28 @@
                             <% ForumDAO fdao = new ForumDAO();
                                 for (ForumDTO f : fdao.carregaDados()) {
                             %>    
-                            <% if (adminLogado == null) { %>
+                            <% if (adminLogado == null) {%>
                             <a href=""> </a> <span style="color: darkorange; font-size: 17px; "> <%=f.getNome()%></span><span style="font-size: 15px"> <%=f.getData()%> </span> :<span style="font-size: 15px"> <%=f.getMensag()%> </span>   
                             <br>
-                            <% } else { %>
+                            <% } else {%>
                             <a href="excluiMsg" <%=f.getId()%> > <img  src="assets/lixeira.png"/> </a> <span style="color: darkorange; font-size: 17px; "> <%=f.getNome()%></span><span style="font-size: 15px"> <%=f.getData()%> </span> :<span style="font-size: 15px"> <%=f.getMensag()%> </span>   
                             <br>
                             <% } %>
-                            <% if ((adminLogado != null) && (adminLogado)) {
-                            %>
-
+                            <% if ((adminLogado != null) && (adminLogado)) {%>
                             <% } // if%> 
                             <% } // for%>
                         </div>
                         <form action="mensagem" name="message" method="post">
-                            <p style="text-align: left;margin-left: 27px">Nome: <input name="usuario" type="nome" id="username" size="63" /></p>                                 
+                            <p style="text-align: left;margin-left: 27px">Nome: <input name="usuario" type="nome" id="username" size="63"> </p>
+                                <% ForumDTO fd = new ForumDTO();
+                                    if (true) {        
+                                %>
+                            <h5 style=" color: red"> O nome deve conter até 15 caracteres.</h5>
+                            <% } %> 
+
                             <p style="text-align: left;margin-left: 27px">Mensagem: <input name="mensagem" type="text" id="usermsg" size="63" /></p>
                             <input  style=" margin-top: 25px;margin-left: 28px" name="submitmsg" type="submit"  id="submitmsg" value="Postar" />
-                            <% 
+                            <%
                                 if (adminLogado == null) {
                             %>
                             <a style=" text-align: right;margin-right: 27px;float: right" href="login.jsp">Logar</a>

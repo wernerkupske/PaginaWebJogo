@@ -17,7 +17,7 @@ create table jogada(
 );
 
 create table forum(
-    nome varchar(15) not null,
+    nome varchar(100) not null,
     msg varchar(100) not null,
     strData varchar(100) not null,
     id int not null auto_increment primary key

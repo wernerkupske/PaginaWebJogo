@@ -36,9 +36,11 @@ public class excluiMsg extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             ForumDAO fdao = new ForumDAO();
-	    fdao.excluiMsg(0);
-	    RequestDispatcher rd = request.getRequestDispatcher("forum.jsp");
-	    rd.forward(request, response);
+            String id = request.getParameter("id");
+            int i = Integer.parseInt(id);
+            fdao.excluiMsg(i);
+            RequestDispatcher rd = request.getRequestDispatcher("forum.jsp");
+            rd.forward(request, response);
         }
     }
 

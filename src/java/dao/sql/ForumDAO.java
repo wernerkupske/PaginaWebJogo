@@ -46,7 +46,7 @@ public class ForumDAO {
         try{
 	    DriverManager.registerDriver(new com.mysql.jdbc.Driver());
 	    Connection conn = DriverManager.getConnection(STRING_CONEXAO);
-	    String sql = "delete from forum where id=?;";
+	    String sql = "delete from forum where id="+ id +";";
 	    PreparedStatement p = conn.prepareStatement(sql);
 	    p.execute();
 	    conn.close();
